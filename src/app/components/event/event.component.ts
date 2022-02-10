@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from 'src/app/services/events/event.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class EventComponent implements OnInit {
   photos:[];
   constructor(
     private route:ActivatedRoute,
-    private _eventService:EventService
+    private _eventService:EventService,
+    private router:Router
   ) { 
     this.photos=[];
   }
@@ -22,6 +23,7 @@ export class EventComponent implements OnInit {
       const {params}=paramMap
       console.log(params.id);
       this.eventid=params.id;
+      
     });
 
     this.getPhotos();
@@ -34,5 +36,9 @@ export class EventComponent implements OnInit {
         console.log(this.photos);
       }
     )
+  }
+  goToUpload(){
+    let newRoute='upload/' + this.eventid;
+    this.router.navigate([newRoute]);
   }
 }
