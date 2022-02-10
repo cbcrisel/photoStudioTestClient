@@ -1,0 +1,19 @@
+<div class="container">
+<form >
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input [(ngModel)]="user.email" name="email" type="email" class="form-control"  placeholder="Introduzca su email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
+            <input [(ngModel)]="user.password" name="password" type="password" class="form-control"  placeholder="Introduzca su contraseña">
+          </div>
+          <div class="container-login100-form-btn m-t-17">
+            <button [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="login()" class="login100-form-btn" type="submit">
+                Ingresar
+            </button>
+        </div>
+    </div>
+</form>
+</div>
