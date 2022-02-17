@@ -9,18 +9,6 @@ export class Utils {
          let item=sessionStorage.getItem(key) ;
 
          return item;
-         /* let decrypt=this.decryptData(sessionStorage.getItem(key))
-         if(item!=null){
-
-        
-        //  console.log('ITEM    '+item);
-        //  console.log('DECRIPT '+decrypt)
-       
-         if(stringify(item).localeCompare(stringify(decrypt))==0 ){
-         Utils.set(Constants.ERROR_LOCAL_VARIABLES,'asds');
-         }
-        }
-         return decrypt; */
          
     }
   
@@ -32,26 +20,4 @@ export class Utils {
         sessionStorage.clear();
     }
 
-    /* private static encryptData(data:any) {
-
-        try {
-          return CryptoJS.AES.encrypt(JSON.stringify(data),"prueba123").toString();
-        } catch (e) {
-          console.log(e);
-        }
-      }
-    
-    private static decryptData(data:any) {
-    
-        try {
-          const bytes = CryptoJS.AES.decrypt(data, "prueba123");
-          if (bytes.toString()) {
-            return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-          }
-          return data;
-        } catch (e) {
-        //  console.error(e);
-         
-        }
-      } */
 }
